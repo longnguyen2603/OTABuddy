@@ -131,7 +131,7 @@ details p{margin:10px 0 0;color:#4A5B6B}
     if(!hotel){say("Vui lòng nhập tên khách sạn.");f.hotel.focus();return;}
     if(!/^[0-9+().\s-]{8,20}$/.test(phone)){say("Vui lòng nhập số điện thoại hoặc Zalo hợp lệ.");f.phone.focus();return;}
     if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){say("Vui lòng nhập email hợp lệ.");f.email.focus();return;}
-    if(SCRIPT_URL.indexOf("https://script.google.com/")!==0){say("Form chưa được kết nối. Hãy dán URL Google Apps Script vào SCRIPT_URL.");return;}
+    if(SCRIPT_URL.indexOf("https://script.google.com/macros/s/AKfycbyCb9nU6ce5lp-eYeOLBptyEsYtFiZ7d8DLqecBRqJkHEfECiIpsVGOIdQt1jW5S7sL/exec")!==0){say("Form chưa được kết nối. Hãy dán URL Google Apps Script vào SCRIPT_URL.");return;}
     btn.disabled=true;btn.style.opacity=".6";say("Đang gửi...",true);
     var body=new URLSearchParams({hotel:hotel,phone:phone,email:email,rooms:f.rooms.value,website:hp.value,page:location.href});
     fetch(SCRIPT_URL,{method:"POST",mode:"no-cors",body:body}).then(function(){
